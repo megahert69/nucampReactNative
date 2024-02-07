@@ -22,7 +22,7 @@ const HomeNavigator = () => {
     return (
         <Stack.Navigator screenOptions={screenOptions}>
             <Stack.Screen
-                name='Home'
+                name='home'
                 component={HomeScreen}
                 options={({ navigation }) => ({
                     title: 'Home',
@@ -30,20 +30,11 @@ const HomeNavigator = () => {
                         <Icon 
                             name='home'
                             type='font-awesome'
-                            iconStyle={styles.stackIcon}
+                            iconStyle={styles.Icon}
                             onPress={() => navigation.toggleDrawer()}
                         />
                     )
                 })}
-            />
-            <Stack.Screen
-                name='About'
-                component={AboutScreen}
-            />
-            <Stack.Screen
-                name='Contact'
-                component={ContactScreen}
-                options={{ title: 'Contact Us' }}
             />
         </Stack.Navigator>
     );
@@ -57,7 +48,7 @@ const DirectoryNavigator = () => {
             screenOptions={screenOptions}
         >
             <Stack.Screen
-                name='Directory'
+                name='DirectoryScreen'
                 component={DirectoryScreen}
                 options={({ navigation }) => ({
                     title: 'Campsite Directory',
@@ -65,7 +56,7 @@ const DirectoryNavigator = () => {
                         <Icon 
                             name='list'
                             type='font-awesome'
-                            iconStyle={styles.stackIcon}
+                            iconStyle={styles.Icon}
                             onPress={() => navigation.toggleDrawer()}
                         />
                     )
@@ -90,7 +81,7 @@ const AboutNavigator = () => {
             screenOptions={screenOptions}
         >
             <Stack.Screen
-                name='About'
+                name='AboutScreen'
                 component={AboutScreen}
                 options={({ navigation }) => ({
                     headerLeft: () => (
@@ -115,7 +106,7 @@ const ContactNavigator = () => {
             screenOptions={screenOptions}
         >
             <Stack.Screen
-                name='Contact'
+                name='ContactScreen'
                 component={ContactScreen}
                 options={({ navigation }) => ({
                     title: 'Contact Us',
@@ -149,12 +140,10 @@ const Main = () => {
                 <Drawer.Screen
                     name='Home'
                     component={HomeNavigator}
-                    options={{ title: 'Home' }}
                 />
                 <Drawer.Screen
                     name='Directory'
                     component={DirectoryNavigator}
-                    options={{ title: 'Directory' }}
                 />
                 <Drawer.Screen
                     name='About'
